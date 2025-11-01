@@ -18,6 +18,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "🏗️ Building Java application with Maven..."
+                // Grant execute permission before running
+                sh 'chmod +x mvnw'
                 sh './mvnw clean package'
             }
         }
