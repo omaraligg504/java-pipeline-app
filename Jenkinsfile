@@ -2,27 +2,15 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('DockerHub')  // The ID of your DockerHub credentials in Jenkins
+        DOCKERHUB_CREDENTIALS = credentials('DockerHub')
         IMAGE_NAME = "omaraligg/python-iti"
     }
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                echo "📦 Cloning project repository..."
-                git 'https://github.com/omaraligg504/java-pipeline-app.git'
-            }
-        }
-
         stage('Check Build Number') {
             steps {
                 script {
                     echo "🔢 Current build number: ${env.BUILD_NUMBER}"
-                    // if (env.BUILD_NUMBER.toInteger() < 5) {
-                    //     error("❌ Build number is less than 5 — failing intentionally.")
-                    // } else {
-                    //     echo "✅ Build number is valid."
-                    // }
                 }
             }
         }
