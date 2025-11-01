@@ -57,3 +57,4 @@ Feel free to explore and customize the pipeline according to your learning goals
 ## Contributing
 
 Contributions are welcome! If you find issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+# java-pipeline-app
