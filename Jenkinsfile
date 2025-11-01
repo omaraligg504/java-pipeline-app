@@ -19,8 +19,7 @@ pipeline {
             steps {
                 echo "🏗️ Building Java application with Maven..."
                 // Grant execute permission before running
-                sh 'chmod +x mvnw'
-                sh './mvnw clean package'
+                sh 'vn clean package'
             }
         }
 
