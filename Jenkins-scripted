@@ -1,6 +1,10 @@
 node("agent-0"){
     def maven = tool name: 'mvn-3-5-2', type: 'maven'
     def jdk = tool name: 'java-11', type: 'jdk'
+
+    stage("Check SCM"){
+        git branch: 'main', url: 'https://github.com/Hassan-Eid-Hassan/python-iti.git'
+    }
     
     stage("Build"){
         env.PATH = "${maven}/bin:${env.PATH}"
